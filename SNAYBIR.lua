@@ -10386,14 +10386,13 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end
 --     Source SNAYBIR     --
 if SecondSudo(msg) then
-if text == "تحديث السورس" or text == "تحديث سورس" then 
+if text == "تحديث السورس" and ChCheck(msg) or text == "تحديث سورس" and ChCheck(msg) or text == "↫ تحديث السورس ᥀" and ChCheck(msg) then 
 Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙جاري تحديث سورس سنايبر', 1, 'md') 
 os.execute('rm -rf SNAYBIR.lua') 
 os.execute('wget https://raw.githubusercontent.com/SNYBER/SNAYBIR/main/SNAYBIR.lua') 
 dofile('SNAYBIR.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
-print("\27[31;47m\n          ( تم تحديث 
-)          \n\27[0;34;49m\n") 
+print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
 Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙تم التحديث الى الاصدار الجديد', 1, 'md') 
 end
 if text == 'تحديث' or text == 'تحديث البوت' or text == '↫ تحديث ⌁' then  
