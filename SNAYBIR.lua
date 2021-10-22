@@ -1492,7 +1492,7 @@ DevAbs:set(SNAYBIR.."Set:Cmd:Group:New1"..msg.chat_id_..":ت","تثبيت")
 DevAbs:sadd(SNAYBIR.."List:Cmd:Group:New"..msg.chat_id_,"ت")
 DevAbs:set(SNAYBIR.."Set:Cmd:Group:New1"..msg.chat_id_..":مط","رفع مطور")
 DevAbs:sadd(SNAYBIR.."List:Cmd:Group:New"..msg.chat_id_,"مط")
-DevAbs:set(SNAYBIR.."Set:Cmd:Group:New1"..msg.chat_id_..":ثا","رفع مطور ثانوي ")
+DevAbs:set(SNAYBIR.."Set:Cmd:Group:New1"..msg.chat_id_..":ثا","رفع مطور ثانوي")
 DevAbs:sadd(SNAYBIR.."List:Cmd:Group:New"..msg.chat_id_,"ثا")
 DevAbs:set(SNAYBIR.."Set:Cmd:Group:New1"..msg.chat_id_..":ر","الرابط")
 DevAbs:sadd(SNAYBIR.."List:Cmd:Group:New"..msg.chat_id_,"ر")
@@ -1747,6 +1747,7 @@ local key = {
 {'~المتجر~'},
 {'تعطيل البوت الخدمي','تفعيل البوت الخدمي'},
 {'قناة السورس','تحديث السورس','جلب نسخه الكروبات'},
+{'حذف كليشة الايدي','تعيين كليشة الايدي'},
 {'↫ حذف رد عام ⌁','↫ الردود العام ⌁','↫ اضف رد عام ⌁'},
 {'↫ حذف رد الخاص ⌁ ',' ↫ تعيين رد الخاص ⌁'},
 {'حذف قناة الاشتراك','قناة الاشتراك','تعيين قناة الاشتراك'},
@@ -3745,7 +3746,7 @@ name = string.gsub(name,'🐇','🕊🕊🕊🕊🕊🐇🕊🕊')
 name = string.gsub(name,'🌑','🌚🌚🌚🌚🌚🌑🌚🌚')
 name = string.gsub(name,'🌚','🌑🌑🌑🌑🌑🌚🌑🌑')
 name = string.gsub(name,'⭐️','🌟🌟🌟🌟🌟🌟⭐️🌟')
-name = string.gsub(name,'📥','💫💫💫📥💫💫💫💫')
+name = string.gsub(name,'📥','💫💫💫📥??💫💫💫')
 name = string.gsub(name,'⛈','🌨??🌨⛈🌨🌨🌨🌨')
 name = string.gsub(name,'🌥','⛅️⛅️⛅️🌥⛅️⛅️⛅️⛅️')
 name = string.gsub(name,'⛄️','☃️☃️☃️☃️⛄️☃️☃️☃️☃️')
@@ -5490,7 +5491,7 @@ else
 send(msg.chat_id_, msg.id_,'⌁︙لقبك ↫ '..GetCustomTitle(msg.sender_user_id_,msg.chat_id_)) 
 end
 end
-if text == 'نبذتي' or text == 'بايو' then
+if text == 'نبذتي' or text == 'باييو' then
 send(msg.chat_id_, msg.id_,'['..GetBio(msg.sender_user_id_)..']')
 end
 if text == "راسلني" then
