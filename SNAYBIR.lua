@@ -3173,6 +3173,108 @@ ReplyStatus(msg,msg.sender_user_id_,"WrongWay","★︙ممنوع التكلم ب
 end end
 --     Source SNAYBIR     --
 if SecondSudo(msg) then
+if text == 'جلب النسخه' and SudoBot(msg) then
+local Groups = DevAbs:smembers(SNAYBIR..'Abs:Groups')  
+local UsersBot = DevAbs:smembers(SNAYBIR..'Abs:Users')  
+local Get_Json = '{"BotId": '..SNAYBIR..','  
+if #UsersBot ~= 0 then 
+Get_Json = Get_Json..'"UsersBot":['  
+for k,v in pairs(UsersBot) do
+if k == 1 then
+Get_Json = Get_Json..'"'..v..'"'
+else
+Get_Json = Get_Json..',"'..v..'"'
+end
+end   
+Get_Json = Get_Json..']'
+end
+Get_Json = Get_Json..',"GroupsBot":{'
+for k,v in pairs(Groups) do   
+local Malk = DevAbs:smembers(SNAYBIR..":Abs:AbsConstructor:"..v)
+local President = DevAbs:smembers(SNAYBIR.."Abs:BasicConstructor:"..v)
+local Constructor = DevAbs:smembers(SNAYBIR..":Abs:Constructor:"..v)
+local Manager = DevAbs:smembers(SNAYBIR.."Abs:Managers:"..v)
+local Admin = DevAbs:smembers(SNAYBIR.."Abs:Admins:"..v)
+local Vips = DevAbs:smembers(SNAYBIR.."Abs:VipMem:"..v)
+if k == 1 then
+Get_Json = Get_Json..'"'..v..'":{'
+else
+Get_Json = Get_Json..',"'..v..'":{'
+end
+if #Malk ~= 0 then 
+Get_Json = Get_Json..'"Malk":['
+for k,v in pairs(Malk) do
+if k == 1 then
+Get_Json = Get_Json..'"'..v..'"'
+else
+Get_Json = Get_Json..',"'..v..'"'
+end
+end   
+Get_Json = Get_Json..'],'
+end
+if #President ~= 0 then 
+Get_Json = Get_Json..'"President":['
+for k,v in pairs(President) do
+if k == 1 then
+Get_Json = Get_Json..'"'..v..'"'
+else
+Get_Json = Get_Json..',"'..v..'"'
+end
+end   
+Get_Json = Get_Json..'],'
+end
+if #Constructor ~= 0 then
+Get_Json = Get_Json..'"Constructor":['
+for k,v in pairs(Constructor) do
+if k == 1 then
+Get_Json = Get_Json..'"'..v..'"'
+else
+Get_Json = Get_Json..',"'..v..'"'
+end
+end   
+Get_Json = Get_Json..'],'
+end
+if #Manager ~= 0 then
+Get_Json = Get_Json..'"Manager":['
+for k,v in pairs(Manager) do
+if k == 1 then
+Get_Json = Get_Json..'"'..v..'"'
+else
+Get_Json = Get_Json..',"'..v..'"'
+end
+end   
+Get_Json = Get_Json..'],'
+end
+if #Admin ~= 0 then
+Get_Json = Get_Json..'"Admin":['
+for k,v in pairs(Admin) do
+if k == 1 then
+Get_Json = Get_Json..'"'..v..'"'
+else
+Get_Json = Get_Json..',"'..v..'"'
+end
+end   
+Get_Json = Get_Json..'],'
+end
+if #Vips ~= 0 then
+Get_Json = Get_Json..'"Vips":['
+for k,v in pairs(Vips) do
+if k == 1 then
+Get_Json = Get_Json..'"'..v..'"'
+else
+Get_Json = Get_Json..',"'..v..'"'
+end
+end   
+Get_Json = Get_Json..'],'
+end
+Get_Json = Get_Json..'"Dev":"558"}'
+end
+Get_Json = Get_Json..'}}'
+local File = io.open('./'..SNAYBIR..'.json', "w")
+File:write(Get_Json)
+File:close()
+return sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './'..SNAYBIR..'.json', '',dl_cb, nil)
+end
 if text == 'جلب نسخه الكروبات' or text == 'جلب نسخه احتياطيه' or text == 'جلب النسخه الاحتياطيه' then
 local List = DevAbs:smembers(SNAYBIR..'Abs:Groups') 
 local BotName = (DevAbs:get(SNAYBIR.."Abs:NameBot") or 'سنايبر')
